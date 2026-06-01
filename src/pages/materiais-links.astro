@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AtividadeLink from '../components/commons/AtividadeLink.astro';
+import ModalSaibaMais from '../components/commons/ModalSaibaMais.astro';
+import iconeMaisConteudo from '../assets/imgs/icone-mais-conteudo.webp';
+---
+
+<Layout title="Materiais e links do módulo" secao="materiais-links">
+    <div class="secao-wrapper">
+        <div class="secao-card">
+            <div class="secao-titulo">
+                <div class="secao-titulo-icone">
+                    <!-- materiais-links não tem PNG/WebP — usando SVG inline -->
+                    <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 3H8a2 2 0 0 0-2 2v26a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V13z"/>
+                        <polyline points="20,3 20,13 30,13"/>
+                        <line x1="12" y1="19" x2="24" y2="19"/>
+                        <line x1="12" y1="24" x2="20" y2="24"/>
+                        <path d="M22 26l4-4 3 3-4 4-3-3z" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h1>Materiais e links do módulo</h1>
+            </div>
+
+            <div class="secao-content">
+                <p>
+                    Aqui você encontra todos os textos-base, artigos, legislação e recursos digitais
+                    indicados ao longo do módulo — organizados por tema para facilitar a consulta.
+                </p>
+
+                <!-- TEXTOS-BASE -->
+                <h2>Textos-base</h2>
+                <p>Leitura obrigatória para acompanhar os conteúdos do módulo:</p>
+                <div class="row g-3 mb-4">
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Deficiência, direitos humanos e justiça"
+                            href="#"
+                            tipo="link"
+                        />
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Política Nacional de Educação Especial na perspectiva da Educação Inclusiva"
+                            href="#"
+                            tipo="link"
+                        />
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Transtorno do Espectro Autista: características e estratégias pedagógicas"
+                            href="#"
+                            tipo="link"
+                        />
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="TDAH e aprendizagem: o que a escola precisa saber"
+                            href="#"
+                            tipo="link"
+                        />
+                    </div>
+                </div>
+
+                <!-- LEGISLAÇÃO -->
+                <h2>Legislação e documentos oficiais</h2>
+                <p>
+                    Documentos legais que fundamentam a educação especial e a perspectiva inclusiva no Brasil.
+                    <a href="#" class="link-saibamais ms-1" data-bs-toggle="modal" data-bs-target="#saibamais-leg">Ver linha do tempo</a>
+                </p>
+                <div class="row g-3 mb-4">
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Lei nº 9.394/1996 — LDB: Seção sobre Educação Especial"
+                            href="#"
+                            tipo="link"
+                        />
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Resolução CNE/CEB nº 4/2009 — Diretrizes do AEE"
+                            href="#"
+                            tipo="link"
+                        />
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Lei nº 12.764/2012 — Proteção dos Direitos da Pessoa com TEA"
+                            href="#"
+                            tipo="link"
+                        />
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Lei nº 13.146/2015 — Lei Brasileira de Inclusão (LBI)"
+                            href="#"
+                            tipo="link"
+                        />
+                    </div>
+                </div>
+
+                <!-- RECURSOS DIGITAIS -->
+                <h2>Recursos digitais e vídeos</h2>
+                <div class="row g-3">
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="CAST — Diretrizes do DUA (versão interativa)"
+                            href="#"
+                            tipo="link"
+                        />
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Portal do MEC — Educação Especial"
+                            href="#"
+                            tipo="link"
+                        />
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Comunicação Aumentativa e Alternativa — materiais práticos"
+                            href="#"
+                            tipo="link"
+                        />
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Cronograma completo do módulo (PDF)"
+                            href="#"
+                            tipo="link"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ModalSaibaMais id="saibamais-leg" titulo="Linha do tempo da legislação inclusiva no Brasil">
+        <h3>Principais marcos legislativos</h3>
+        <ul>
+            <li><strong>1988</strong> — Constituição Federal: educação como direito de todos;</li>
+            <li><strong>1994</strong> — Declaração de Salamanca: referência internacional para a educação inclusiva;</li>
+            <li><strong>1996</strong> — LDB nº 9.394: capítulo específico sobre educação especial;</li>
+            <li><strong>2000</strong> — Resolução CNE/CEB nº 2: educação especial como modalidade transversal;</li>
+            <li><strong>2008</strong> — Política Nacional de Educação Especial na perspectiva inclusiva (MEC);</li>
+            <li><strong>2009</strong> — Resolução CNE/CEB nº 4: diretrizes para o AEE;</li>
+            <li><strong>2012</strong> — Lei nº 12.764 (Lei Berenice Piana): proteção dos direitos da pessoa com TEA;</li>
+            <li><strong>2015</strong> — Lei nº 13.146 (LBI): Lei Brasileira de Inclusão da Pessoa com Deficiência;</li>
+            <li><strong>2016</strong> — Decreto nº 8.752: Política Nacional de Formação dos Profissionais da Educação Básica.</li>
+        </ul>
+        <p class="saibamais-ref">
+            Fonte: SEESP/MEC e levantamento próprio.
+        </p>
+    </ModalSaibaMais>
+</Layout>

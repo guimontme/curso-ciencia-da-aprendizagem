@@ -1,0 +1,33 @@
+---
+import secoes from '../../../configuracao_conteudo.json';
+
+interface Props {
+    secaoAtual?: string;
+}
+
+const { secaoAtual } = Astro.props;
+---
+
+<div class="blocos-nav-wrapper">
+    <button class="sidebar-toggle" aria-label="Menu lateral" title="Índice do curso">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="2" y1="4"  x2="16" y2="4"/>
+            <line x1="2" y1="9"  x2="16" y2="9"/>
+            <line x1="2" y1="14" x2="16" y2="14"/>
+        </svg>
+    </button>
+
+    <div class="blocos-scroll">
+        {secoes.map((secao) => (
+            <a
+                href={secao.pagina}
+                class={`bloco-item ${secaoAtual === secao.identificador ? 'active' : ''}`}
+                title={secao.nome}
+            >
+                <span class="bloco-label">{secao.nome}</span>
+            </a>
+        ))}
+    </div>
+
+    <button class="nav-collapse" aria-label="Recolher navegação" title="Recolher">›</button>
+</div>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="180" viewBox="0 0 300 180">
+  <rect width="300" height="180" fill="#7da850"/>
+
+  <!-- Dandelion 1 -->
+  <g stroke="rgba(255,255,255,0.4)" stroke-linecap="round" fill="none">
+    <line x1="60" y1="180" x2="56" y2="100" stroke-width="1.5"/>
+    <line x1="56" y1="100" x2="38" y2="72"/><circle cx="37" cy="70" r="2" fill="rgba(255,255,255,0.55)" stroke="none"/>
+    <line x1="56" y1="100" x2="46" y2="64"/><circle cx="45" cy="62" r="2" fill="rgba(255,255,255,0.55)" stroke="none"/>
+    <line x1="56" y1="100" x2="56" y2="61"/><circle cx="56" cy="59" r="2" fill="rgba(255,255,255,0.55)" stroke="none"/>
+    <line x1="56" y1="100" x2="66" y2="64"/><circle cx="67" cy="62" r="2" fill="rgba(255,255,255,0.55)" stroke="none"/>
+    <line x1="56" y1="100" x2="74" y2="72"/><circle cx="75" cy="70" r="2" fill="rgba(255,255,255,0.55)" stroke="none"/>
+    <line x1="56" y1="100" x2="78" y2="84"/><circle cx="79" cy="83" r="2" fill="rgba(255,255,255,0.55)" stroke="none"/>
+    <line x1="56" y1="100" x2="33" y2="84"/><circle cx="32" cy="83" r="2" fill="rgba(255,255,255,0.55)" stroke="none"/>
+    <!-- leaf on stem -->
+    <path d="M57 140 C70 130 78 118 72 108" stroke-width="1"/>
+  </g>
+
+  <!-- Dandelion 2 (taller, background) -->
+  <g stroke="rgba(255,255,255,0.22)" stroke-linecap="round" fill="none">
+    <line x1="195" y1="180" x2="191" y2="55" stroke-width="1.5"/>
+    <line x1="191" y1="55" x2="172" y2="22"/><circle cx="171" cy="20" r="2.5" fill="rgba(255,255,255,0.38)" stroke="none"/>
+    <line x1="191" y1="55" x2="181" y2="14"/><circle cx="180" cy="12" r="2.5" fill="rgba(255,255,255,0.38)" stroke="none"/>
+    <line x1="191" y1="55" x2="191" y2="10"/><circle cx="191" cy="8"  r="2.5" fill="rgba(255,255,255,0.38)" stroke="none"/>
+    <line x1="191" y1="55" x2="201" y2="14"/><circle cx="202" cy="12" r="2.5" fill="rgba(255,255,255,0.38)" stroke="none"/>
+    <line x1="191" y1="55" x2="210" y2="22"/><circle cx="211" cy="20" r="2.5" fill="rgba(255,255,255,0.38)" stroke="none"/>
+    <line x1="191" y1="55" x2="214" y2="38"/><circle cx="215" cy="37" r="2.5" fill="rgba(255,255,255,0.38)" stroke="none"/>
+    <line x1="191" y1="55" x2="168" y2="38"/><circle cx="167" cy="37" r="2.5" fill="rgba(255,255,255,0.38)" stroke="none"/>
+    <!-- leaf on stem -->
+    <path d="M192 110 C207 98 215 82 208 68" stroke-width="1"/>
+    <path d="M190 130 C175 118 168 102 175 88" stroke-width="1"/>
+  </g>
+
+  <!-- Reed / grass cluster (right) -->
+  <g stroke="rgba(255,255,255,0.18)" stroke-linecap="round" fill="none">
+    <line x1="260" y1="180" x2="255" y2="90" stroke-width="1.5"/>
+    <line x1="270" y1="180" x2="267" y2="105" stroke-width="1.2"/>
+    <line x1="280" y1="180" x2="276" y2="115" stroke-width="1.2"/>
+    <path d="M255 90 C248 75 252 58 260 48" stroke-width="1"/>
+    <path d="M267 105 C275 92 280 75 278 60" stroke-width="1"/>
+    <path d="M276 115 C285 102 290 85 286 70" stroke-width="1"/>
+  </g>
+
+  <!-- Floating seeds -->
+  <g fill="rgba(255,255,255,0.3)">
+    <circle cx="110" cy="40" r="1.5"/>
+    <circle cx="130" cy="25" r="1"/>
+    <circle cx="145" cy="55" r="1.2"/>
+    <circle cx="230" cy="70" r="1"/>
+    <circle cx="245" cy="45" r="1.5"/>
+    <circle cx="165" cy="75" r="1"/>
+  </g>
+  <g stroke="rgba(255,255,255,0.2)" fill="none">
+    <line x1="110" y1="40" x2="105" y2="50"/>
+    <line x1="130" y1="25" x2="125" y2="35"/>
+    <line x1="145" y1="55" x2="140" y2="65"/>
+    <line x1="230" y1="70" x2="226" y2="80"/>
+    <line x1="245" y1="45" x2="240" y2="55"/>
+  </g>
+</svg>

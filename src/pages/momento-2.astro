@@ -1,0 +1,208 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Semana from '../components/commons/Semana.astro';
+import Box from '../components/commons/Box.astro';
+import ForumLink from '../components/commons/ForumLink.astro';
+import ModalVerbete from '../components/commons/ModalVerbete.astro';
+import ModalSaibaMais from '../components/commons/ModalSaibaMais.astro';
+import iconeObjetivo from '../assets/imgs/icone-objetivo.svg';
+import iconeAula from '../assets/imgs/icone-aula.svg';
+import iconeInfos from '../assets/imgs/icone-infos.svg';
+import iconeMaisConteudo from '../assets/imgs/icone-mais-conteudo.svg';
+import iconeBoasvindas from '../assets/imgs/icone-boasvindas.svg';
+import DecoArco from '../components/commons/DecoArco.astro';
+---
+
+<Layout title="Momento 2" secao="momento-2">
+    <div class="secao-wrapper">
+        <div class="secao-card">
+            <div class="secao-titulo">
+                <div class="secao-titulo-icone">
+                    <img src={iconeBoasvindas.src} alt="" />
+                </div>
+                <h1>Momento 2</h1>
+            </div>
+
+            <div class="secao-content">
+                <p>
+                    Neste segundo momento, vamos aprofundar os conhecimentos sobre o
+                    <a href="#" class="link-verbete" data-bs-toggle="modal" data-bs-target="#verbete-tea">TEA — Transtorno do Espectro Autista</a>:
+                    suas características, como se manifesta no contexto escolar e quais estratégias podem
+                    favorecer o aprendizado dos estudantes autistas.
+                </p>
+
+                <!-- SEMANA 1 -->
+                <Semana numero={1} collapseId="s1m2" aberta={true}>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone"><img src={iconeObjetivo.src} alt="" /></span>
+                            <span class="subsecao-titulo">Objetivos</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <ul>
+                                <li>Identificar as principais características do TEA;</li>
+                                <li>Compreender como o espectro autista se manifesta de formas diversas;</li>
+                                <li>Reconhecer sinais de TEA no cotidiano escolar.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone"><img src={iconeAula.src} alt="" /></span>
+                            <span class="subsecao-titulo-aula">Aula 1 - Introdução ao Transtorno do Espectro Autista: o que é e como se manifesta</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <div style="display:flex; justify-content:center; margin:14px 0;">
+                                <div style="width:100%; max-width:680px; aspect-ratio:16/9; border-radius:6px; overflow:hidden;">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dFdy_GmFTvQ" title="Vídeo — Aula" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display:block;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone"><img src={iconeMaisConteudo.src} alt="" /></span>
+                            <span class="subsecao-titulo">Mais conteúdo</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <a href="#" class="link-material">DSM-5: Critérios diagnósticos para o TEA</a>
+                            <br/>
+                            <a href="#" class="link-material-outline" style="margin-top:6px; display:inline-flex;">
+                                Lei nº 12.764/2012 — Política Nacional de Proteção dos Direitos da Pessoa com TEA
+                            </a>
+                        </div>
+                    </div>
+
+                </Semana>
+
+                <!-- SEMANA 2 -->
+                <Semana numero={2} collapseId="s2m2" aberta={false}>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone"><img src={iconeObjetivo.src} alt="" /></span>
+                            <span class="subsecao-titulo">Objetivos</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <ul>
+                                <li>Conhecer estratégias pedagógicas inclusivas para estudantes com TEA;</li>
+                                <li>Compreender o papel da rotina estruturada e das pistas visuais;</li>
+                                <li>Identificar recursos de Comunicação Aumentativa e Alternativa (CAA).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone"><img src={iconeAula.src} alt="" /></span>
+                            <span class="subsecao-titulo-aula">Aula 2 - Estratégias pedagógicas para estudantes com TEA</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <div style="display:flex; justify-content:center; margin:14px 0;">
+                                <div style="width:100%; max-width:680px; aspect-ratio:16/9; border-radius:6px; overflow:hidden;">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dFdy_GmFTvQ" title="Vídeo — Aula" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display:block;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone"><img src={iconeInfos.src} alt="" /></span>
+                            <span class="subsecao-titulo">Infos</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <div class="info-strip">
+                                <div class="info-icone"><img src={iconeInfos.src} alt="" /></div>
+                                <div>
+                                    Rotinas visuais (agendas pictóricas, sequências de atividades) podem reduzir
+                                    a ansiedade de estudantes com TEA e facilitar transições entre atividades.
+                                    <a href="#" class="link-saibamais ms-1" data-bs-toggle="modal" data-bs-target="#saibamais-visual">Saiba mais</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </Semana>
+
+                <!-- SEMANA 3 -->
+                <Semana numero={3} collapseId="s3m2" aberta={false}>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone"><img src={iconeObjetivo.src} alt="" /></span>
+                            <span class="subsecao-titulo">Objetivos</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <ul>
+                                <li>Compreender questões sensoriais associadas ao TEA e como adaptá-las na escola;</li>
+                                <li>Conhecer recursos de tecnologia assistiva para estudantes com TEA;</li>
+                                <li>Planejar adaptações curriculares centradas no estudante.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone"><img src={iconeAula.src} alt="" /></span>
+                            <span class="subsecao-titulo-aula">Aula 3 - Sensorialidade, tecnologia assistiva e adaptações curriculares para TEA</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <div style="display:flex; justify-content:center; margin:14px 0;">
+                                <div style="width:100%; max-width:680px; aspect-ratio:16/9; border-radius:6px; overflow:hidden;">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dFdy_GmFTvQ" title="Vídeo — Aula" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display:block;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <Box titulo="Prazo da atividade: XX/XX/XXXX">
+                        <p>
+                            Não se esqueça de realizar a atividade avaliativa do Momento 2.
+                            Acesse a <a href="/avaliacao-modulo" style="color:#465627;font-weight:700;">Avaliação do módulo</a>.
+                        </p>
+                    </Box>
+
+                </Semana>
+
+                <div class="mt-3">
+                    <ForumLink href="#" titulo="Fórum de discussão — Momento 2" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ModalVerbete id="verbete-tea" titulo="TEA — Transtorno do Espectro Autista">
+        <p>
+            O <strong>TEA</strong> é um transtorno do neurodesenvolvimento caracterizado por dificuldades
+            na comunicação e interação social e pela presença de padrões restritos e repetitivos de
+            comportamento, interesses ou atividades.
+        </p>
+        <p>
+            O termo "espectro" indica que as características se apresentam em graus variados — não há
+            dois autistas iguais. No Brasil, a Lei nº 12.764/2012 reconhece a pessoa com TEA como
+            pessoa com deficiência.
+        </p>
+    </ModalVerbete>
+
+    <ModalSaibaMais id="saibamais-visual" titulo="Apoio visual na rotina escolar">
+        <h3>Exemplos práticos</h3>
+        <ul>
+            <li><strong>Agenda pictórica:</strong> sequência de imagens mostrando as atividades do dia;</li>
+            <li><strong>Temporizador visual:</strong> mostra quanto tempo resta para cada atividade;</li>
+            <li><strong>Cartões de escolha:</strong> permitem que o aluno expresse preferências;</li>
+            <li><strong>Regras visuais:</strong> regras da sala em forma de imagem/ícone.</li>
+        </ul>
+    </ModalSaibaMais>
+</Layout>

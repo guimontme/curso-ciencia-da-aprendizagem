@@ -1,0 +1,65 @@
+[
+  {
+    "identificador": "boas-vindas",
+    "nome": "Boas-vindas!",
+    "pagina": "/boas-vindas",
+    "tipo": "secao",
+    "icone": "boas-vindas"
+  },
+  {
+    "identificador": "ferramentas-comunicacao",
+    "nome": "Ferramentas de comunicação",
+    "pagina": "/ferramentas-comunicacao",
+    "tipo": "secao",
+    "icone": "ferramentas"
+  },
+  {
+    "identificador": "momento-1",
+    "nome": "Momento 1",
+    "pagina": "/momento-1",
+    "tipo": "momento",
+    "numero": 1
+  },
+  {
+    "identificador": "momento-2",
+    "nome": "Momento 2",
+    "pagina": "/momento-2",
+    "tipo": "momento",
+    "numero": 2
+  },
+  {
+    "identificador": "momento-3",
+    "nome": "Momento 3",
+    "pagina": "/momento-3",
+    "tipo": "momento",
+    "numero": 3
+  },
+  {
+    "identificador": "momento-4",
+    "nome": "Momento 4",
+    "pagina": "/momento-4",
+    "tipo": "momento",
+    "numero": 4
+  },
+  {
+    "identificador": "avaliacao-modulo",
+    "nome": "Avaliação do módulo",
+    "pagina": "/avaliacao-modulo",
+    "tipo": "secao",
+    "icone": "avaliacao"
+  },
+  {
+    "identificador": "certificacao-encerramento",
+    "nome": "Certificação e encerramento",
+    "pagina": "/certificacao-encerramento",
+    "tipo": "secao",
+    "icone": "certificacao"
+  },
+  {
+    "identificador": "materiais-links",
+    "nome": "Materiais e links do módulo",
+    "pagina": "/materiais-links",
+    "tipo": "secao",
+    "icone": "materiais"
+  }
+]

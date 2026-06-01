@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Box from '../components/commons/Box.astro';
+import iconeCertificacao from '../assets/imgs/icone-certificacao.webp';
+---
+
+<Layout title="Certificação e encerramento" secao="certificacao-encerramento">
+    <div class="secao-wrapper">
+        <div class="secao-card">
+            <div class="secao-titulo">
+                <div class="secao-titulo-icone">
+                    <img src={iconeCertificacao.src} alt="Certificação e encerramento" />
+                </div>
+                <h1>Certificação e encerramento</h1>
+            </div>
+
+            <div class="secao-content">
+                <h2>Parabéns por chegar até aqui! 🎉</h2>
+
+                <p>
+                    Você concluiu todos os Momentos do <strong>Módulo Educação Especial na Perspectiva da
+                    Educação Inclusiva</strong>. Esperamos que os conteúdos, atividades e trocas realizadas
+                    ao longo deste módulo tenham contribuído de forma significativa para a sua prática profissional.
+                </p>
+
+                <Box titulo="Requisitos para emissão do certificado">
+                    <p>Para receber o seu certificado de conclusão, você precisa ter:</p>
+                    <ul style="margin:8px 0 0; padding-left:18px;">
+                        <li>Concluído todos os 4 Momentos;</li>
+                        <li>Realizado todas as atividades avaliativas;</li>
+                        <li>Respondido à avaliação de reação do curso;</li>
+                        <li>Obtido nota mínima de <strong>70%</strong> em cada atividade.</li>
+                    </ul>
+                </Box>
+
+                <h3>Como acessar seu certificado</h3>
+                <p>
+                    O certificado estará disponível em até <strong>15 dias úteis</strong> após o cumprimento
+                    de todos os requisitos acima. Você receberá uma notificação no e-mail cadastrado na
+                    plataforma quando ele estiver disponível para download.
+                </p>
+                <p>
+                    Para acessar, basta ir ao seu perfil na plataforma e clicar em <em>"Meus certificados"</em>.
+                </p>
+
+                <div class="row g-3 mt-2 mb-3">
+                    <div class="col-md-6">
+                        <div class="card-conteudo">
+                            <div class="card-header-verde">Verificar progresso</div>
+                            <div class="card-body-verde" style="font-size:13px;">
+                                Acompanhe o status das suas atividades e veja quais requisitos
+                                já foram cumpridos no painel de notas.
+                            </div>
+                            <div class="card-footer-verde">
+                                <a href="#" class="btn-acessar">Acessar minhas notas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-conteudo">
+                            <div class="card-header-verde">Avaliação de reação</div>
+                            <div class="card-body-verde" style="font-size:13px;">
+                                Ainda não respondeu? Sua opinião é essencial para melhorarmos
+                                o módulo nas próximas ofertas!
+                            </div>
+                            <div class="card-footer-verde">
+                                <a href="/avaliacao-modulo" class="btn-acessar">Ir para avaliação</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Próximos passos</h3>
+                <p>
+                    Este módulo é apenas o início! O Curso <strong>Ciência da Aprendizagem</strong> tem outros
+                    módulos que abordam diferentes dimensões da prática pedagógica. Fique atento às próximas
+                    ofertas e continue sua jornada de formação.
+                </p>
+
+                <p>
+                    Dúvidas sobre a certificação? Entre em contato pelo fórum
+                    <a href="/ferramentas-comunicacao" style="color:#465627;font-weight:700;">Dúvidas gerais sobre o curso</a>
+                    ou pelo e-mail da coordenação do curso.
+                </p>
+
+                <div style="padding: 20px; background: #dde8ca; border-radius: 8px; text-align:center; margin-top: 20px;">
+                    <p style="margin:0; font-size:16px; font-family:'Raleway',sans-serif; font-weight:700; color:#465627;">
+                        Obrigada pela sua participação!<br/>
+                        <span style="font-weight:400; font-size:14px;">Equipe Ciência da Aprendizagem — Rede CpE / UFRJ</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

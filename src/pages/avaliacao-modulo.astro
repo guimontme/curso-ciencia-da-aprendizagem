@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AtividadeLink from '../components/commons/AtividadeLink.astro';
+import Box from '../components/commons/Box.astro';
+import iconeAvaliacao from '../assets/imgs/icone-avaliacao.webp';
+---
+
+<Layout title="Avaliação do módulo" secao="avaliacao-modulo">
+    <div class="secao-wrapper">
+        <div class="secao-card">
+            <div class="secao-titulo">
+                <div class="secao-titulo-icone">
+                    <img src={iconeAvaliacao.src} alt="Avaliação do módulo" />
+                </div>
+                <h1>Avaliação do módulo</h1>
+            </div>
+
+            <div class="secao-content">
+                <p>Salve, salve, queridos alunos!</p>
+
+                <p>
+                    A seguir você encontra a avaliação do nosso curso. Conta pra gente o que você achou para a
+                    gente poder melhorar ainda mais para a próxima oferta?
+                </p>
+
+                <Box titulo="Lembramos que">
+                    <p>
+                        • esta avaliação fica disponível até <strong>XX/XX/XXXX</strong>;<br/>
+                        • ela é pré-requisito, junto com a realização das lições, para que você obtenha seu
+                        certificado.
+                    </p>
+                </Box>
+
+                <h2>Atividades por Momento</h2>
+                <p>Cada Momento possui uma atividade avaliativa independente. Realize todas elas:</p>
+
+                <div class="row g-3 mt-1">
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Atividade do Momento 1 — Educação Inclusiva"
+                            href="#"
+                            tipo="atividade"
+                        />
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Atividade do Momento 2 — TEA na escola"
+                            href="#"
+                            tipo="atividade"
+                        />
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Atividade do Momento 3 — TDAH na escola"
+                            href="#"
+                            tipo="atividade"
+                        />
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <AtividadeLink
+                            titulo="Atividade do Momento 4 — DUA na prática"
+                            href="#"
+                            tipo="atividade"
+                        />
+                    </div>
+                </div>
+
+                <h2 style="margin-top: 28px;">Avaliação de reação</h2>
+                <p>
+                    Além das atividades acima, você precisa responder à avaliação de reação do curso.
+                    Ela é fundamental para que possamos melhorar o módulo para as próximas turmas:
+                </p>
+
+                <div class="row g-3">
+                    <div class="col-6 col-md-4">
+                        <AtividadeLink
+                            titulo="Avaliação de reação — O que você achou do módulo?"
+                            href="#"
+                            tipo="atividade"
+                        />
+                    </div>
+                </div>
+
+                <div class="mt-4 p-3" style="background:#dde8ca; border-radius:8px; border-left:4px solid #87aa61;">
+                    <p style="margin:0; font-size:14px; line-height:1.6;">
+                        <strong>Após concluir todas as atividades,</strong> acesse a seção
+                        <a href="/certificacao-encerramento" style="color:#465627;font-weight:700;">Certificação e encerramento</a>
+                        para verificar as instruções para emissão do seu certificado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>

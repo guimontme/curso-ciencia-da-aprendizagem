@@ -1,0 +1,91 @@
+---
+import BlocosNav from '../components/inc/BlocosNav.astro';
+import bannerImg from '../assets/imgs/banner-principal-modulo-2.webp';
+
+interface Props {
+    title: string;
+    secao?: string;
+    showBanner?: boolean;
+    showTabs?: boolean;
+    navBottom?: boolean;
+}
+
+const { title, secao, showBanner = false, showTabs = false, navBottom = false } = Astro.props;
+---
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title} — Ciência da Aprendizagem</title>
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+            crossorigin="anonymous"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+
+        {showBanner && (
+            <div class="course-banner-wrapper">
+                <img
+                    src={bannerImg.src}
+                    alt="Ciência da Aprendizagem — Módulo 2: Educação Especial na perspectiva da Educação inclusiva"
+                    class="course-banner-full"
+                />
+            </div>
+        )}
+
+        {showTabs && (
+            <div class="course-tabs">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item"><a class="nav-link active" href="/">Curso</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Configurações</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Participantes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Notas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Atividades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Mais ▾</a></li>
+                </ul>
+            </div>
+        )}
+
+        {!navBottom && (
+            <div class="breadcrumb-topo">
+                <a href="/" class="breadcrumb-home">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    Página inicial
+                </a>
+            </div>
+        )}
+        {!navBottom && <BlocosNav secaoAtual={secao} />}
+
+        <main class={`moodle-body${navBottom ? ' moodle-body--index' : ''}`}>
+            <slot />
+        </main>
+
+        {navBottom && <BlocosNav secaoAtual={secao} />}
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
+
+<style is:global lang="stylus">
+    @import '../stylus/theme.styl'
+</style>

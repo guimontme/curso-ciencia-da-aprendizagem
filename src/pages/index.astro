@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import secoes from '../../configuracao_conteudo.json';
+
+import iconeBoasvindas from '../assets/imgs/icone-boasvindas.svg';
+import iconeFerramentas from '../assets/imgs/icone-ferramentas-de-comunicacao.svg';
+import iconeAvaliacao from '../assets/imgs/icone-avaliacao.svg';
+import iconeCertificacao from '../assets/imgs/icone-certificacao.svg';
+import iconeMateriaisLinks from '../assets/imgs/icone-materiais-links.svg';
+
+interface ImageMetadata {
+    src: string;
+    width: number;
+    height: number;
+}
+
+const iconeMap: Record<string, ImageMetadata> = {
+    'boas-vindas': iconeBoasvindas,
+    'ferramentas': iconeFerramentas,
+    'avaliacao': iconeAvaliacao,
+    'certificacao': iconeCertificacao,
+    'materiais-links': iconeMateriaisLinks,
+};
+---
+
+<Layout title="Ciência da Aprendizagem — Módulo 2" showBanner={true} showTabs={true} navBottom={true}>
+    <div class="course-index">
+        <div class="blocos-grade">
+            {secoes.map((secao) => {
+                const icone = secao.icone ? iconeMap[secao.icone] : null;
+                return (
+                    <a href={secao.pagina} class={`bloco-grade-item bloco-${secao.tipo}`} title={secao.nome}>
+                        <span class="bloco-topo"></span>
+                        <div class="bloco-bg"></div>
+                        <span class="bloco-label">{secao.nome}</span>
+                    </a>
+                );
+            })}
+        </div>
+    </div>
+</Layout>

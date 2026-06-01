@@ -1,0 +1,15 @@
+---
+import iconeForum from '../../assets/imgs/icone-forum.svg';
+
+interface Props {
+    href?: string;
+    titulo: string;
+}
+const { href = '#', titulo } = Astro.props;
+---
+<a href={href} class="forum-link">
+    <span class="forum-icone">
+        <img src={iconeForum.src} alt="" />
+    </span>
+    {titulo}
+</a>

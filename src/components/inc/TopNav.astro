@@ -1,0 +1,51 @@
+---
+// TopNav — barra de navegação superior estilo Moodle
+---
+<nav class="moodle-topnav">
+    <div class="topnav-left">
+        <!-- Logo simplificado do site -->
+        <svg class="site-logo" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="38" height="38" rx="5" fill="#1454a8"/>
+            <circle cx="19" cy="19" r="8" stroke="#f0e060" stroke-width="2" fill="none"/>
+            <!-- dandelion simples -->
+            <line x1="19" y1="11" x2="19" y2="6"  stroke="#f0e060" stroke-width="1.2"/>
+            <line x1="19" y1="27" x2="19" y2="32" stroke="#f0e060" stroke-width="1.2"/>
+            <line x1="11" y1="19" x2="6"  y2="19" stroke="#f0e060" stroke-width="1.2"/>
+            <line x1="27" y1="19" x2="32" y2="19" stroke="#f0e060" stroke-width="1.2"/>
+            <line x1="13.3" y1="13.3" x2="9.7" y2="9.7"   stroke="#f0e060" stroke-width="1.2"/>
+            <line x1="24.7" y1="24.7" x2="28.3" y2="28.3" stroke="#f0e060" stroke-width="1.2"/>
+            <line x1="24.7" y1="13.3" x2="28.3" y2="9.7"  stroke="#f0e060" stroke-width="1.2"/>
+            <line x1="13.3" y1="24.7" x2="9.7"  y2="28.3" stroke="#f0e060" stroke-width="1.2"/>
+        </svg>
+
+        <a href="/">Página inicial</a>
+        <a href="#">Painel</a>
+        <a href="#">Meus cursos</a>
+    </div>
+
+    <div class="topnav-right">
+        <!-- Bell -->
+        <button class="btn-topnav-icon" aria-label="Notificações">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+        </button>
+
+        <!-- Message -->
+        <button class="btn-topnav-icon" aria-label="Mensagens">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+        </button>
+
+        <!-- User badge -->
+        <div class="user-badge" title="Meu perfil">AG</div>
+
+        <!-- Modo de edição toggle -->
+        <div class="edit-mode">
+            <span>Modo de edição</span>
+            <div class="toggle-switch" role="switch" aria-checked="false"></div>
+        </div>
+    </div>
+</nav>

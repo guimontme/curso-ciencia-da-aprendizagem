@@ -1,0 +1,1379 @@
+// ============================================================
+// Reset & Base
+// ============================================================
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: font-base;
+  background-color: branco;
+  overflow-x: hidden;
+  color: cinza-texto;
+}
+
+// ============================================================
+// Moodle Top Navigation
+// ============================================================
+.moodle-topnav {
+  background-color: branco;
+  border-bottom: 1px solid cinza-claro;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+
+  .topnav-left {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    .site-logo {
+      width: 38px;
+      height: 38px;
+      margin-right: 10px;
+      border-radius: 4px;
+    }
+
+    a {
+      color: #666;
+      text-decoration: none;
+      font-size: 13px;
+      padding: 4px 10px;
+      border-radius: 4px;
+
+      &:hover {
+        background: cinza-claro;
+        color: preto;
+      }
+    }
+  }
+
+  .topnav-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    .btn-topnav-icon {
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #666;
+
+      &:hover {
+        background: cinza-claro;
+      }
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .user-badge {
+      background: azul;
+      color: branco;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: font-titulo;
+    }
+
+    .edit-mode {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #666;
+      margin-left: 6px;
+
+      .toggle-switch {
+        width: 38px;
+        height: 20px;
+        background: cinza-claro;
+        border-radius: 10px;
+        position: relative;
+        cursor: pointer;
+        border: 1px solid cinza-medio;
+
+        &::after {
+          content: '';
+          width: 14px;
+          height: 14px;
+          background: branco;
+          border-radius: 50%;
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+          transition: left 0.2s;
+        }
+      }
+    }
+  }
+}
+
+// ============================================================
+// Course Banner (index page)
+// ============================================================
+.course-banner {
+  width: 100%;
+  background: linear-gradient(135deg, #183d7c 0%, #1454a8 50%, #1a5fbe 100%);
+  padding: 28px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 140px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/bloco-bg.svg');
+    background-size: cover;
+    opacity: 0.07;
+  }
+
+  .banner-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: branco;
+
+    .banner-logo-curso {
+      display: flex;
+      flex-direction: column;
+
+      .banner-pre {
+        font-size: 13px;
+        opacity: 0.8;
+        font-family: font-titulo;
+      }
+
+      .banner-nome {
+        font-family: font-titulo;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 1.1;
+
+        span {
+          color: #f0e060;
+        }
+      }
+    }
+  }
+
+  .banner-modulo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: branco;
+
+    .banner-arco {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255,255,255,0.6);
+      border-right-color: transparent;
+      border-radius: 50%;
+    }
+
+    .banner-modulo-info {
+      .banner-modulo-num {
+        font-size: 12px;
+        opacity: 0.8;
+        font-family: font-titulo;
+      }
+
+      .banner-modulo-titulo {
+        font-family: font-titulo;
+        font-size: 18px;
+        font-weight: 700;
+        max-width: 380px;
+        line-height: 1.3;
+      }
+    }
+  }
+
+  .banner-rodape-logo {
+    text-align: right;
+    color: branco;
+    opacity: 0.8;
+    font-size: 10px;
+    font-family: font-titulo;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+  }
+}
+
+// ============================================================
+// Course Tabs (index page)
+// ============================================================
+.course-tabs {
+  background: branco;
+  border-bottom: 1px solid cinza-claro;
+
+  .nav-tabs {
+    border-bottom: none;
+    padding: 0 16px;
+    justify-content: center;
+
+    .nav-link {
+      color: #666;
+      font-size: 13px;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 10px 14px;
+      font-family: font-base;
+
+      &.active {
+        color: azul;
+        border-bottom-color: azul;
+        font-weight: 600;
+        background: none;
+      }
+
+      &:hover {
+        color: preto;
+        border-bottom-color: cinza-claro;
+      }
+    }
+  }
+}
+
+// ============================================================
+// Blocos Navigation (horizontal scroll)
+// ============================================================
+.breadcrumb-topo {
+  background: #e8e6e6;
+  padding: 6px 16px;
+  border-bottom: 1px solid #c8c6c6;
+
+  .breadcrumb-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #465627;
+    font-family: font-base;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      color: #87aa61;
+      text-decoration: underline;
+    }
+  }
+}
+
+.blocos-nav-wrapper {
+  background: #d0cece;
+  display: flex;
+  align-items: stretch;
+  min-height: 108px;
+  border-bottom: 1px solid #d8d8d8;
+
+  .sidebar-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #555;
+    flex-shrink: 0;
+
+    &:hover {
+      color: preto;
+    }
+  }
+
+  .blocos-scroll {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 8px 6px;
+    flex: 1;
+    align-items: center;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: cinza-medio;
+      border-radius: 2px;
+    }
+  }
+
+  .nav-collapse {
+    background: rgba(0,0,0,0.06);
+    border: none;
+    cursor: pointer;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #666;
+    flex-shrink: 0;
+
+    &:hover {
+      background: rgba(0,0,0,0.12);
+    }
+  }
+}
+
+.bloco-item {
+  min-width: 128px;
+  height: 88px;
+  border-radius: 0;
+  overflow: hidden;
+  text-decoration: none;
+  position: relative;
+  flex-shrink: 0;
+  display: block;
+  background-color: #a6a4a4;
+  background-image: url('/bloco-bg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 6px 0 0 #87aa61;
+  opacity: 0.6;
+  transition: opacity 0.2s, box-shadow 0.2s;
+
+  .bloco-label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    display: block;
+    width: max-content;
+    max-width: 85%;
+    background: verde-escuro;
+    color: branco;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    font-family: font-titulo;
+    line-height: 1.3;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// ============================================================
+// Moodle Main Body
+// ============================================================
+.moodle-body {
+  min-height: calc(100vh - 108px);
+  padding: 24px 16px;
+  background: #d0cece;
+
+  &--index {
+    background: branco;
+  }
+}
+
+// ============================================================
+// Course Index Grid
+// ============================================================
+.course-index {
+  max-width: 1560px;
+  margin: 0 auto;
+
+  .grid-acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-bottom: 12px;
+
+    button {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid cinza-medio;
+      border-radius: 4px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      color: #666;
+      font-size: 14px;
+
+      &:hover {
+        background: branco;
+      }
+    }
+  }
+
+  .blocos-grade {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .bloco-grade-item {
+    width: 165px;
+    height: 120px;
+    border-radius: 0;
+    overflow: hidden;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+    background-color: #c7d4b2;
+    background-image: url('/bloco-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 6px 0 0 #87aa61;
+    transition: box-shadow 0.2s;
+
+    .bloco-topo {
+      display: none;
+    }
+
+    .bloco-bg {
+      display: none;
+    }
+
+    .bloco-label {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      display: block;
+      width: max-content;
+      max-width: 85%;
+      background: verde-escuro;
+      color: branco;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      font-family: font-titulo;
+      line-height: 1.3;
+    }
+
+    .bloco-icone-wrap {
+      display: none;
+    }
+
+    &:hover {
+      box-shadow: inset 0 6px 0 0 #87aa61, 0 8px 28px rgba(0,0,0,0.35);
+    }
+  }
+}
+
+// ============================================================
+// Section Card (white content area)
+// ============================================================
+.secao-wrapper {
+  max-width: 1560px;
+  margin: 0 auto;
+}
+
+.secao-card {
+  background: branco;
+  padding: 28px 36px 40px;
+  position: relative;
+  border-radius: 16px;
+}
+
+// ============================================================
+// Section Title — Título 1: Raleway 24px bold, cor do módulo
+// ============================================================
+.secao-titulo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+
+  .secao-titulo-icone {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    color: verde;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+
+    svg, img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  h1 {
+    font-family: font-titulo;
+    font-size: 24px;
+    font-weight: 700;
+    color: cinza-texto;
+    margin: 0;
+    padding: 0 0 10px 0;
+    border-bottom: 4px solid verde;
+    line-height: 1.1;
+    align-self: flex-end;
+  }
+}
+
+// ============================================================
+// Content text
+// ============================================================
+.secao-content {
+  font-family: font-base;
+  font-size: 15px;       // Texto corrido — 15px
+  line-height: 1.8;
+  color: preto;
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  // Subtítulo — Raleway 18px bold, cor do módulo
+  h2 {
+    font-family: font-titulo;
+    font-size: 18px;
+    font-weight: 700;
+    color: verde;
+    margin-top: 28px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid verde-claro;
+  }
+
+  // Subtítulo menor — Raleway 15px bold
+  h3 {
+    font-family: font-titulo;
+    font-size: 15px;
+    font-weight: 700;
+    color: verde-escuro;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  ul {
+    padding-left: 22px;
+    margin-bottom: 14px;
+
+    li {
+      margin-bottom: 6px;
+    }
+  }
+
+  a:not([class]) {
+    color: verde;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      color: verde-escuro;
+    }
+  }
+}
+
+// ============================================================
+// Box / Alert (BOXES do PDF)
+// ============================================================
+.box-destaque {
+  border-radius: 6px;
+  padding: 0;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  background: branco;
+  border: 1px solid verde-claro;
+  overflow: hidden;
+
+  .box-icone {
+    width: 52px;
+    flex-shrink: 0;
+    background: verde;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img, svg {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      filter: invert(1) brightness(2);
+    }
+  }
+
+  .box-corpo {
+    flex: 1;
+    padding: 14px 18px;
+
+    .box-titulo {
+      font-family: font-titulo;
+      font-size: 14px;
+      font-weight: 700;
+      color: verde-escuro;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    p {
+      font-size: 14px;
+      margin: 0;
+      line-height: 1.6;
+      color: #222;
+    }
+  }
+}
+
+// ============================================================
+// Card de Conteúdo (CARDS do PDF)
+// ============================================================
+.card-conteudo {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #d4e8b8;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .card-header-verde {
+    background: verde;
+    color: branco;
+    padding: 13px 16px;
+    font-family: font-titulo;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1.3;
+  }
+
+  .card-body-verde {
+    padding: 14px 16px;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #222;
+    flex: 1;
+  }
+
+  .card-footer-verde {
+    padding: 0 16px 14px;
+  }
+
+  .btn-acessar {
+    display: block;
+    width: 100%;
+    background: verde;
+    color: branco;
+    border: none;
+    padding: 10px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: font-base;
+    letter-spacing: 1px;
+
+    &:hover {
+      background: darken(verde, 8%);
+      color: branco;
+    }
+  }
+}
+
+// ============================================================
+// Atividade / Link Card (ATIVIDADES E LINKS do PDF)
+// ============================================================
+.atividade-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 14px 16px;
+  background: branco;
+  border: 1px solid #d4e8b8;
+  border-radius: 6px;
+  text-align: center;
+  gap: 10px;
+  height: 100%;
+
+  .atividade-icone {
+    width: 64px;
+    height: 64px;
+    color: verde;
+
+    svg, img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .atividade-titulo {
+    font-family: font-titulo;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .btn-atividade {
+    display: block;
+    width: 100%;
+    background: verde;
+    color: branco;
+    border: none;
+    padding: 9px 12px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: font-base;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    &:hover {
+      background: darken(verde, 8%);
+      color: branco;
+    }
+  }
+}
+
+// ============================================================
+// Semana Accordion (ACCORDION do PDF)
+// ============================================================
+.semana-bloco {
+  margin-bottom: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .semana-cabecalho {
+    background: verde;
+    color: branco;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    text-align: left;
+    transition: background 0.15s;
+
+    &:hover {
+      background: darken(verde, 6%);
+    }
+
+    .semana-num {
+      width: 24px;
+      height: 24px;
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: font-titulo;
+      flex-shrink: 0;
+    }
+
+    .semana-nome {
+      font-family: font-titulo;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .semana-toggle {
+      font-size: 12px;
+      opacity: 0.85;
+      font-family: font-base;
+    }
+
+    .semana-chevron {
+      font-size: 10px;
+      transition: transform 0.2s;
+    }
+
+    &.collapsed .semana-chevron {
+      transform: rotate(180deg);
+    }
+  }
+
+  .semana-corpo {
+    border: 1px solid #cde1a8;
+    border-top: none;
+    background: branco;
+    padding: 16px 18px;
+  }
+}
+
+// ============================================================
+// Sub-seção (OBJETIVOS / AULAS dentro da Semana) — não colapsável
+// ============================================================
+.subsecao {
+  border-bottom: 1px solid #e0eacf;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .subsecao-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid verde;
+    margin-bottom: 24px;
+
+    .subsecao-icone {
+      width: 48px;
+      height: 48px;
+      color: verde;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: center;
+
+      img, svg {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    // OBJETIVOS / INFOS / MAIS CONTEÚDO — uppercase
+    .subsecao-titulo {
+      font-family: font-titulo;
+      font-size: 14px;
+      font-weight: 700;
+      color: verde;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      line-height: 1;
+      flex: 1;
+      align-self: center;
+    }
+
+    // Título de AULA — mixed case, green
+    .subsecao-titulo-aula {
+      font-family: font-titulo;
+      font-size: 13px;
+      font-weight: 600;
+      color: verde;
+      line-height: 1.3;
+      flex: 1;
+      align-self: center;
+    }
+
+    // Arco decorativo (tit-arcos.svg)
+    .subsecao-deco {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      align-self: center;
+
+      img {
+        width: 48px;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+
+  .subsecao-corpo {
+    padding: 8px 0 16px 36px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: preto;
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
+
+      li {
+        margin-bottom: 6px;
+      }
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    .video-wrapper {
+      max-width: 620px;
+      margin: 14px 0;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #000;
+
+      video, iframe {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}
+
+// ============================================================
+// Forum Link
+// ============================================================
+.forum-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 4px;
+  border-bottom: 1px solid cinza-claro;
+  text-decoration: none;
+  color: verde;
+  font-weight: 700;
+  font-family: font-base;
+  font-size: 14px;
+  line-height: 1.2;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    color: verde-escuro;
+    text-decoration: underline;
+  }
+
+  .forum-icone {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    color: verde;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+
+    svg, img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// ============================================================
+// Material / Link inline
+// ============================================================
+.link-material {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: verde;
+  border-radius: 4px;
+  text-decoration: none;
+  color: branco;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 4px 0;
+  transition: background 0.15s;
+  font-family: font-base;
+
+  &:hover {
+    background: darken(verde, 8%);
+    color: branco;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+}
+
+.link-material-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border: 1px solid verde;
+  border-radius: 4px;
+  text-decoration: none;
+  color: verde;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 4px 0;
+  font-family: font-base;
+  transition: all 0.15s;
+
+  &:hover {
+    background: verde;
+    color: branco;
+  }
+
+  svg, img {
+    width: 18px;
+    height: 18px;
+    color: verde;
+    flex-shrink: 0;
+  }
+}
+
+// ============================================================
+// Bloco grade icon elements
+// ============================================================
+.bloco-icone-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+
+  .bloco-icone-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
+  }
+
+  .bloco-numero {
+    font-family: font-titulo;
+    font-size: 26px;
+    font-weight: 700;
+    color: branco;
+    line-height: 1;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+
+  .bloco-svg-icone {
+    width: 100%;
+    height: 100%;
+    color: branco;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+  }
+}
+
+// ============================================================
+// Real image icon sizing (PNG/WebP imports)
+// ============================================================
+.secao-titulo-icone {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.subsecao-icone {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.box-icone {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.forum-icone {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.atividade-icone {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+// ============================================================
+// Course banner — real image
+// ============================================================
+.course-banner-wrapper {
+  max-width: 1560px;
+  margin: 0 auto;
+  overflow: hidden;
+  display: block;
+  line-height: 0;
+
+  .course-banner-full {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+// ============================================================
+// Link Verbete (trigger glossário)
+// ============================================================
+.link-verbete {
+  color: azul;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px dotted azul;
+  cursor: pointer;
+  padding-bottom: 1px;
+
+  &::after {
+    content: 'ⓘ';
+    font-size: 0.75em;
+    margin-left: 3px;
+    vertical-align: super;
+    font-weight: 400;
+  }
+
+  &:hover {
+    color: darken(azul, 12%);
+    border-bottom-style: solid;
+  }
+}
+
+// ============================================================
+// Link Saiba Mais (trigger modal info)
+// ============================================================
+.link-saibamais {
+  color: verde;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+
+  &::after {
+    content: '⊕';
+    font-size: 0.9em;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    color: verde-escuro;
+    text-decoration: underline;
+  }
+}
+
+// ============================================================
+// Modal Verbete (blue)
+// ============================================================
+.modal-verbete {
+  .modal-dialog {
+    max-width: 560px;
+  }
+
+  .modal-content {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  }
+
+  .modal-header {
+    background: azul;
+    color: branco;
+    border-bottom: none;
+    padding: 18px 24px;
+
+    .modal-title {
+      font-family: font-titulo;
+      font-size: 19px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+        filter: invert(1) brightness(2);
+      }
+    }
+
+    .btn-close {
+      filter: invert(1);
+      opacity: 0.85;
+    }
+  }
+
+  .modal-body {
+    background: azul;
+    color: branco;
+    padding: 16px 24px 28px;
+    font-family: font-base;
+    font-size: 16px;
+    line-height: 1.75;
+
+    p {
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// ============================================================
+// Modal Saiba Mais (green)
+// ============================================================
+.modal-saibamais {
+  .modal-dialog {
+    max-width: 600px;
+  }
+
+  .modal-content {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+  }
+
+  .modal-header {
+    background: verde;
+    color: branco;
+    border-bottom: none;
+    padding: 16px 24px;
+
+    .modal-title {
+      font-family: font-titulo;
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+        filter: invert(1) brightness(2);
+      }
+    }
+
+    .btn-close {
+      filter: invert(1);
+      opacity: 0.85;
+    }
+  }
+
+  .modal-body {
+    padding: 22px 24px;
+    font-family: font-base;
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1a1a1a;
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-family: font-titulo;
+      font-size: 16px;
+      font-weight: 700;
+      color: verde-escuro;
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    ul {
+      padding-left: 20px;
+
+      li {
+        margin-bottom: 6px;
+      }
+    }
+
+    .saibamais-ref {
+      font-size: 13px;
+      color: cinza-texto;
+      border-top: 1px solid cinza-claro;
+      padding-top: 12px;
+      margin-top: 16px;
+    }
+  }
+}
+
+// ============================================================
+// Info strip (INFOS section inside semana)
+// ============================================================
+.info-strip {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #f0f6ff;
+  border-left: 3px solid azul;
+  border-radius: 0 6px 6px 0;
+  margin: 12px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #1a1a1a;
+
+  .info-icone {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

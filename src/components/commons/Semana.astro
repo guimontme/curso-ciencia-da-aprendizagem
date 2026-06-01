@@ -1,0 +1,47 @@
+---
+interface Props {
+    numero: number;
+    collapseId: string;
+    aberta?: boolean;
+}
+const { numero, collapseId, aberta = false } = Astro.props;
+---
+<div class="semana-bloco">
+    <button
+        class={`semana-cabecalho ${!aberta ? 'collapsed' : ''}`}
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target={`#${collapseId}`}
+        aria-expanded={aberta ? 'true' : 'false'}
+        aria-controls={collapseId}
+    >
+        <span class="semana-nome">Semana</span>
+        <span class="semana-num me-auto">{numero}</span>
+        <span class="semana-toggle">{aberta ? 'Contrair' : 'Expandir'}</span>
+        <span class="semana-chevron ms-1">▲</span>
+    </button>
+    <div id={collapseId} class={`collapse ${aberta ? 'show' : ''}`}>
+        <div class="semana-corpo">
+            <slot />
+        </div>
+    </div>
+</div>
+
+<script>
+// Update toggle text on collapse events
+document.querySelectorAll('.semana-cabecalho').forEach((btn) => {
+    const target = btn.getAttribute('data-bs-target');
+    if (!target) return;
+    const collapseEl = document.querySelector(target);
+    if (!collapseEl) return;
+
+    const toggleSpan = btn.querySelector('.semana-toggle') as HTMLElement | null;
+
+    collapseEl.addEventListener('shown.bs.collapse', () => {
+        if (toggleSpan) toggleSpan.textContent = 'Contrair';
+    });
+    collapseEl.addEventListener('hidden.bs.collapse', () => {
+        if (toggleSpan) toggleSpan.textContent = 'Expandir';
+    });
+});
+</script>

@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ForumLink from '../components/commons/ForumLink.astro';
+import iconeFerramentas from '../assets/imgs/icone-ferramentas-de-comunicacao.webp';
+---
+
+<Layout title="Ferramentas de comunicação" secao="ferramentas-comunicacao">
+    <div class="secao-wrapper">
+        <div class="secao-card">
+            <div class="secao-titulo">
+                <div class="secao-titulo-icone">
+                    <img src={iconeFerramentas.src} alt="Ferramentas de comunicação" />
+                </div>
+                <h1>Ferramentas de comunicação</h1>
+            </div>
+
+            <div class="secao-content">
+                <p>
+                    Acreditamos que um espaço formativo seja, antes de mais nada, um espaço em que trocas sejam
+                    possíveis, em que a construção de conhecimento seja compartilhada e que as relações
+                    estabelecidas possam se tornar redes de apoio para uma atuação mais fortalecida nas escolas.
+                </p>
+
+                <p>
+                    Por isso, dedicamos um espaço específico aqui no AVA para concentrar as nossas ferramentas
+                    de comunicação, de forma que a gente sempre ache fácil o canal para conversar.
+                </p>
+
+                <p>
+                    Vamos começar a usar essas ferramentas? Convidamos você a se apresentar para os colegas de
+                    curso, clicando no link abaixo:
+                </p>
+
+                <ForumLink href="#" titulo="Apresente-se!" />
+
+                <p>
+                    Aqui, temos também um espaço livre para interação. Sabe aquele papo do cafezinho ou do
+                    corredor? Aqui é o espaço pra que ele possa acontecer!
+                </p>
+
+                <ForumLink href="#" titulo="Fórum Cafezinho" />
+
+                <p>
+                    Quando a gente inicia um processo novo, como um curso a distância, é natural que surjam
+                    dúvidas. Criamos o espaço abaixo para que você possa enviar suas questões para podermos
+                    ajudar no seu percurso. Aqui, concentramos dúvidas gerais relacionadas ao AVA, ao
+                    desenvolvimento do curso, cronograma, certificação etc. As dúvidas específicas de conteúdo
+                    pedimos que você coloque nos fóruns disponíveis em cada um dos momentos que organizam nosso
+                    curso, ok?
+                </p>
+
+                <ForumLink href="#" titulo="Dúvidas gerais sobre o curso" />
+
+                <p style="margin-top: 24px;">
+                    Pronto! Agora você já conheceu a proposta do curso, já se apresentou e já se familiarizou
+                    com o AVA. Te convidamos para iniciar seus estudos pelo
+                    <a href="/momento-1">Momento 1</a>. Segue para lá!
+                </p>
+            </div>
+        </div>
+    </div>
+</Layout>

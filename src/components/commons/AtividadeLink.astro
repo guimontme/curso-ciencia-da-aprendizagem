@@ -1,0 +1,23 @@
+---
+import iconeAvaliacao from '../../assets/imgs/icone-avaliacao.svg';
+import iconeMateriaisLinks from '../../assets/imgs/icone-materiais-links.svg';
+
+interface Props {
+    titulo: string;
+    href?: string;
+    tipo?: 'atividade' | 'link';
+}
+const { titulo, href = '#', tipo = 'atividade' } = Astro.props;
+const btnTexto = tipo === 'atividade' ? 'Acesse a atividade' : 'Acesse o link';
+---
+<div class="atividade-card">
+    <div class="atividade-icone">
+        {tipo === 'atividade' ? (
+            <img src={iconeAvaliacao.src} alt="" />
+        ) : (
+            <img src={iconeMateriaisLinks.src} alt="" />
+        )}
+    </div>
+    <div class="atividade-titulo">{titulo}</div>
+    <a href={href} class="btn-atividade">{btnTexto}</a>
+</div>

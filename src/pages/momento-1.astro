@@ -1,0 +1,230 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Semana from '../components/commons/Semana.astro';
+import Box from '../components/commons/Box.astro';
+import ForumLink from '../components/commons/ForumLink.astro';
+import ModalVerbete from '../components/commons/ModalVerbete.astro';
+import ModalSaibaMais from '../components/commons/ModalSaibaMais.astro';
+import iconeObjetivo from '../assets/imgs/icone-objetivo.svg';
+import iconeAula from '../assets/imgs/icone-aula.svg';
+import iconeInfos from '../assets/imgs/icone-infos.svg';
+import iconeMaisConteudo from '../assets/imgs/icone-mais-conteudo.svg';
+import iconeBoasvindas from '../assets/imgs/icone-boasvindas.svg';
+import DecoArco from '../components/commons/DecoArco.astro';
+---
+
+<Layout title="Momento 1" secao="momento-1">
+    <div class="secao-wrapper">
+        <div class="secao-card">
+            <div class="secao-titulo">
+                <div class="secao-titulo-icone">
+                    <img src={iconeBoasvindas.src} alt="" />
+                </div>
+                <h1>Momento 1</h1>
+            </div>
+
+            <div class="secao-content">
+                <p>
+                    Neste primeiro momento do curso, você vai conhecer os fundamentos da
+                    <a href="#" class="link-verbete" data-bs-toggle="modal" data-bs-target="#verbete-ei">Educação Inclusiva</a>
+                    e os princípios que orientam nossa abordagem ao longo de todo o módulo.
+                </p>
+
+                <!-- SEMANA 1 -->
+                <Semana numero={1} collapseId="s1m1" aberta={true}>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone">
+                                <img src={iconeObjetivo.src} alt="" />
+                            </span>
+                            <span class="subsecao-titulo">Objetivos</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <ul>
+                                <li>XXXXXX</li>
+                                <li>XXXXXX</li>
+                            </ul>
+                            <p>Veja como será seu percurso de aprendizagem neste momento:</p>
+                            <ul>
+                                <li>Você deverá assistir às videoaulas sobre os temas deste momento;</li>
+                                <li>Deverá, também, ler o texto-base disponível;</li>
+                                <li>Há textos complementares disponíveis para aprofundamento nos temas, caso deseje;</li>
+                                <li>Teremos um webencontro dia XX/XX/XXXX para discutir este momento;</li>
+                                <li>Por fim, você deverá realizar a atividade disponível. Lembre-se de que este item é essencial para a sua certificação ao final do curso.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone">
+                                <img src={iconeAula.src} alt="" />
+                            </span>
+                            <span class="subsecao-titulo-aula">Aula 1 - A proposta e os princípios do Módulo 2: Educação especial na perspectiva da educação inclusiva</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <div style="display:flex; justify-content:center; margin:14px 0;">
+                                <div style="width:100%; max-width:680px; aspect-ratio:16/9; border-radius:6px; overflow:hidden;">
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        src="https://www.youtube.com/embed/dFdy_GmFTvQ"
+                                        title="Vídeo — Aula 1"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen
+                                        style="display:block;"
+                                    ></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone">
+                                <img src={iconeMaisConteudo.src} alt="" />
+                            </span>
+                            <span class="subsecao-titulo">Mais conteúdo</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <a href="#" class="link-material">Declaração de Salamanca (1994)</a>
+                            <br/>
+                            <a href="#" class="link-material-outline" style="margin-top:6px; display:inline-flex;">
+                                Política Nacional de Educação Especial na perspectiva da Educação Inclusiva (MEC, 2008)
+                            </a>
+                        </div>
+                    </div>
+
+                </Semana>
+
+                <!-- SEMANA 2 -->
+                <Semana numero={2} collapseId="s2m1" aberta={false}>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone"><img src={iconeObjetivo.src} alt="" /></span>
+                            <span class="subsecao-titulo">Objetivos</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <ul>
+                                <li>Conhecer a trajetória histórica da educação especial no Brasil, da segregação à inclusão;</li>
+                                <li>Analisar como as concepções sobre deficiência influenciam as práticas pedagógicas;</li>
+                                <li>Identificar o papel do professor e da escola na perspectiva inclusiva.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone"><img src={iconeAula.src} alt="" /></span>
+                            <span class="subsecao-titulo-aula">Aula 2 - Da segregação à inclusão: história da educação especial no Brasil</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <div style="display:flex; justify-content:center; margin:14px 0;">
+                                <div style="width:100%; max-width:680px; aspect-ratio:16/9; border-radius:6px; overflow:hidden;">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dFdy_GmFTvQ" title="Vídeo — Aula" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display:block;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone"><img src={iconeInfos.src} alt="" /></span>
+                            <span class="subsecao-titulo">Infos</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <div class="info-strip">
+                                <div class="info-icone"><img src={iconeInfos.src} alt="" /></div>
+                                <div>
+                                    Após assistir à Aula 2, participe do fórum de discussão respondendo: como
+                                    a história da educação especial se reflete nas práticas da sua escola hoje?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </Semana>
+
+                <!-- SEMANA 3 -->
+                <Semana numero={3} collapseId="s3m1" aberta={false}>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone"><img src={iconeObjetivo.src} alt="" /></span>
+                            <span class="subsecao-titulo">Objetivos</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <ul>
+                                <li>Conhecer os principais marcos legais da educação especial/inclusiva no Brasil;</li>
+                                <li>Relacionar a legislação às práticas de atendimento especializado nas escolas;</li>
+                                <li>Compreender os direitos dos estudantes com deficiência assegurados pela lei.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="subsecao">
+                        <div class="subsecao-cabecalho">
+                            <span class="subsecao-icone"><img src={iconeAula.src} alt="" /></span>
+                            <span class="subsecao-titulo-aula">Aula 3 - Marcos legais da educação inclusiva: do ECA à LBI</span>
+                            <DecoArco />
+                        </div>
+                        <div class="subsecao-corpo">
+                            <div style="display:flex; justify-content:center; margin:14px 0;">
+                                <div style="width:100%; max-width:680px; aspect-ratio:16/9; border-radius:6px; overflow:hidden;">
+                                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dFdy_GmFTvQ" title="Vídeo — Aula" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="display:block;"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <Box titulo="Atividade obrigatória — prazo: XX/XX/XXXX">
+                        <p>
+                            Após concluir as três semanas, realize a atividade avaliativa do Momento 1 na seção
+                            <a href="/avaliacao-modulo" style="color:#465627;font-weight:700;">Avaliação do módulo</a>.
+                        </p>
+                    </Box>
+
+                </Semana>
+
+                <div class="mt-3">
+                    <ForumLink href="#" titulo="Fórum de discussão — Momento 1" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ModalVerbete id="verbete-ei" titulo="Educação Inclusiva">
+        <p>
+            A <strong>Educação Inclusiva</strong> é uma abordagem educacional que busca garantir o acesso,
+            a participação e o aprendizado de todos os estudantes — independentemente de suas características,
+            habilidades ou necessidades — em classes regulares de ensino.
+        </p>
+        <p>
+            No Brasil, a Política Nacional de Educação Especial na Perspectiva da Educação Inclusiva
+            (MEC, 2008) consolidou este paradigma no sistema de ensino público.
+        </p>
+    </ModalVerbete>
+
+    <ModalSaibaMais id="saibamais-sala" titulo="Sala de Recursos Multifuncionais">
+        <p>
+            As <strong>Salas de Recursos Multifuncionais (SRM)</strong> são espaços nas escolas públicas
+            com materiais e profissionais para o Atendimento Educacional Especializado (AEE).
+        </p>
+        <h3>Quem tem direito ao AEE?</h3>
+        <ul>
+            <li>Alunos com deficiência;</li>
+            <li>Alunos com Transtornos Globais do Desenvolvimento (incluindo TEA);</li>
+            <li>Alunos com Altas Habilidades/Superdotação.</li>
+        </ul>
+    </ModalSaibaMais>
+</Layout>

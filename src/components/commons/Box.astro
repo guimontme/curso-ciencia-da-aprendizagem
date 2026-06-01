@@ -1,0 +1,17 @@
+---
+import iconeAtencao from '../../assets/imgs/icone-atencao.svg';
+
+interface Props {
+    titulo: string;
+}
+const { titulo } = Astro.props;
+---
+<div class="box-destaque">
+    <div class="box-icone">
+        <img src={iconeAtencao.src} alt="Atenção" />
+    </div>
+    <div class="box-corpo">
+        <div class="box-titulo">{titulo}</div>
+        <slot />
+    </div>
+</div>
